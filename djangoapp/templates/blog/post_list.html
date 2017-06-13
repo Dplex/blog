@@ -1,0 +1,15 @@
+{% extends "blog/header.html" %}
+{% load i18n %}
+{% block main %}
+
+{% for post in posts %}
+    {{post}}
+    <p></p>
+    {{post.id}}
+    <p></p>
+
+    {{post.author}}
+    <p><h1><a class="text-primary" href="post/{{post.id}}">{{post.title}}</a> </h1></p>
+{% endfor %}
+
+{% endblock %}
