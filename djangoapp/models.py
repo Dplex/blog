@@ -5,7 +5,7 @@ from django.utils import timezone
 
 class Post(models.Model):
     def generate_backgroundimageName(self, filename):
-        url = "uploads/{0}".format(self.id)
+        url = "{1}/{0}".format(filename, self.author)
         return url
 
     author = models.ForeignKey('auth.User')

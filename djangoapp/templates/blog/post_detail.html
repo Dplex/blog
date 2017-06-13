@@ -3,7 +3,8 @@
 
 {% load staticfiles %}
 
-<section class="call-to-action" style="background-image: url({% static 'img/agency/backgrounds/bg-quote.jpg' %});">
+{{ MEDIA_PREFIX }}
+<section class="call-to-action" style="background-image: url({{ MEDIA_PREFIX }}{{post.backgroundimage}});">
     <div class="container wow fadeIn">
             <div class="row">
                 <div class="col-md-10 offset-md-1">
@@ -22,5 +23,5 @@
 </section>
 
 {{ post }}
-
+{{ post.backgroundimage }}
 {% endblock %}
