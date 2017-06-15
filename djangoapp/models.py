@@ -1,5 +1,7 @@
 from django.db import models
 from django.utils import timezone
+from tinymce.models import HTMLField
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 
@@ -14,7 +16,7 @@ class Post(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
     backgroundimage = models.FileField(upload_to=generate_backgroundimageName, null=True)
-
+    htmltext = RichTextField()
 
     def publish(self):
         self.published_date = timezone.now()

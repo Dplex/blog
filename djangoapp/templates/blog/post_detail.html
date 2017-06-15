@@ -4,8 +4,12 @@
 {% load staticfiles %}
 
 {{ MEDIA_PREFIX }}
+
 <section class="call-to-action" style="background-image: url({{ MEDIA_PREFIX }}{{post.backgroundimage}});">
     <div class="container wow fadeIn">
+        <div>
+            {{post.htmltext | safe}}
+        </div>
             <div class="row">
                 <div class="col-md-10 offset-md-1">
                     <span class="quote">Good <span class="text-primary">design</span> is finding that perfect balance between the way something <span class="text-primary">looks</span> and how it <span class="text-primary">functions</span>.</span>
