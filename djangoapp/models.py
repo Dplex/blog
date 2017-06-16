@@ -18,8 +18,6 @@ class Post(models.Model):
     backgroundimage = models.FileField(upload_to=generate_backgroundimageName, null=True)
     htmltext = RichTextField(('Content Of Post'))
 
-    ttt = Ri
-
     def publish(self):
         self.published_date = timezone.now()
         self.save()
